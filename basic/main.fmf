@@ -1,0 +1,27 @@
+summary: it contains nm handling and similation tools
+description: ''
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+  - initscripts
+test: ./runtest.sh
+framework: beakerlib
+recommend:
+  - initscripts
+  - tunctl
+  - bridge-utils
+  - dnsmasq
+  - nc
+  - ncat
+duration: 10m
+enabled: true
+tag:
+  - NoRHEL4
+  - NoRHEL5
+  - TIPpass
+adjust:
+  - enabled: false
+    when: distro == rhel-4, rhel-5
+    continue: false
+extra-nitrate: TC#0521416
+extra-summary: '[init] it contains nm handling and simulation tools (initscripts/basic)'
+extra-task: /CoreOS/initscripts/Library/basic
